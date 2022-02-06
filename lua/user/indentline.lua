@@ -13,12 +13,15 @@ vim.g.indent_blankline_filetype_exclude = {
 	"NvimTree",
 	"Trouble",
 }
-vim.g.indentLine_enabled = 1
+-- disabled by default
+vim.g.indentLine_enabled = 0
+vim.g.indent_blankline_enabled = 0
+
 -- vim.g.indent_blankline_char = "│"
 vim.g.indent_blankline_char = "▏"
 -- vim.g.indent_blankline_char = "▎"
 vim.g.indent_blankline_show_trailing_blankline_indent = false
-vim.g.indent_blankline_show_first_indent_level = true
+vim.g.indent_blankline_show_first_indent_level = false
 vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_current_context = true
 vim.g.indent_blankline_context_patterns = {
@@ -46,6 +49,7 @@ vim.g.indent_blankline_context_patterns = {
 -- HACK: work-around for https://github.com/lukas-reineke/indent-blankline.nvim/issues/59
 vim.wo.colorcolumn = "99999"
 
+-- vim.opt.termguicolors = true
 -- vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
 -- vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]

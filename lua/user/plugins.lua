@@ -44,13 +44,13 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  -- use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
+  -- use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
@@ -70,6 +70,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "f3fora/cmp-spell"
+  -- use "lukas-reineke/cmp-rg"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -93,6 +95,20 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- Rails
+  use "tpope/vim-rails"
+  use "vim-test/vim-test"
+  use "prettier/vim-prettier"
+  use "tpope/vim-commentary"
+  use 'pechorin/any-jump.vim'
+  use 'ntpeters/vim-better-whitespace'
+  use 'mtth/scratch.vim'
+  use 'Einenlum/yaml-revealer'
+  use 'tpope/vim-surround'
+  use 'chriskempson/base16-vim'
+  use 'tpope/vim-eunuch'
+  use 'sainnhe/everforest'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

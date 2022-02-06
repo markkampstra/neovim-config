@@ -86,15 +86,24 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["W"] = { "<cmd>StripWhitespace<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["c"] = { "<cmd>Bdelete<CR>", "Close Buffer" },
+  -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    -- "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    -- "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
+    "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>",
     "Find files",
+  },
+  ["G"] = {
+    "<cmd>lua require('telescope.builtin').grep_string()<cr>",
+    "Grep current word",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+  ["Y"] = { "<cmd>call SearchYamlKey()<cr>", "Projects" },
 
   p = {
     name = "Packer",
@@ -169,6 +178,8 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
+    s = { "<cmd>:setlocal spell! spelllang=en_us<cr>", "Toggle spell check EN/US"},
+    d = { "<cmd>:setlocal spell! spelllang=nl<cr>", "Toggle spell check NL"},
   },
 
   t = {
@@ -181,6 +192,7 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  G = { "<cmd>:IndentBlanklineToggle<cr>", "Toggle indentline"},
 }
 
 which_key.setup(setup)

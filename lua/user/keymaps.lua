@@ -44,7 +44,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
--- Stay in indent mode
+-- Stay in indent modd
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
@@ -67,3 +67,32 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Copy to clipboard
+keymap("v", "<C-c>", ":w !pbcopy<CR>", opts)
+
+-- Comment
+keymap("", "<Leader>/", ":Commentary<CR>", opts)
+
+-- Run Prettier
+keymap("n", "<Leader>m", ":Prettier<CR>", opts)
+
+-- Telescope
+keymap("n", "<Leader>k", "lua require'telescope.builtin'.grep_string()<CR>", opts)
+
+-- LSP
+keymap('n', 'gl', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+
+-- Spell
+-- keymap('n', '<Leader>ss', '<cmd>:setlocal spell! spelllang=en_us<cr>', opts)
+-- keymap('n', '<Leader>sd', '<cmd>:setlocal spell! spelllang=nl<cr>', opts)
+
+-- 0 to beginning of text
+keymap('n', '0', '^', opts)
+
+-- Test shortcuts
+keymap("n", "<Leader>sn", ":TestNearest<CR>", opts)
+keymap("n", "<Leader>sf", ":TestFile<CR>", opts)
+keymap("n", "<Leader>sa", ":TestSuite<CR>", opts)
+keymap("n", "<Leader>sl", ":TestLast<CR>", opts)
+keymap("n", "<Leader>sa", ":TestVisit<CR>", opts)
