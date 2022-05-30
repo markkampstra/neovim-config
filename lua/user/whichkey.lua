@@ -184,10 +184,11 @@ local mappings = {
 
   t = {
     name = "Terminal",
-    n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-    u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+    -- r = { "<cmd>lua _RAILS_TOGGLE()<cr>", "Rails console" },
+    r = { "<cmd>FloatermNew rails c <cr>", "Rails console" },
+    -- d = { "<cmd>lua _RAILS_DOCKER_TOGGLE()<cr>", "Rails console (via Docker)" },
+    d = { "<cmd>FloatermNew docker-compose run web rails c<cr>", "Rails console (via Docker)" },
     t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-    p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },

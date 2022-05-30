@@ -47,3 +47,7 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
 vim.opt.spell = false
 vim.opt.spelllang = { 'en_us', 'nl' }
+
+vim.g['test#strategy'] = "floaterm"
+vim.g['floaterm_width'] = 0.9
+vim.g['floaterm_height'] = 0.9

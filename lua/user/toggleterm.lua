@@ -51,6 +51,18 @@ function _NODE_TOGGLE()
 	node:toggle()
 end
 
+local rails = Terminal:new({ cmd = "railc c", hidden = true })
+
+function _RAILS_TOGGLE()
+	rails:toggle()
+end
+
+local rails_docker = Terminal:new({ cmd = "dcr web bundle exec railc c", hidden = true })
+
+function _RAILS_DOCKER_TOGGLE()
+	rails_docker:toggle()
+end
+
 local ncdu = Terminal:new({ cmd = "ncdu", hidden = true })
 
 function _NCDU_TOGGLE()

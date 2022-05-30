@@ -10,7 +10,8 @@ telescope.setup {
 
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    -- path_display = { "smart" },
+    path_display = { "shorten=2" },
 
     mappings = {
       i = {
@@ -85,6 +86,25 @@ telescope.setup {
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    live_grep = {
+      -- your defaults for live_grep
+        additional_args = function(opts)
+            if opts.search_all == true then
+                return {}
+            end
+
+            local args_for_ext = {
+                ["js"]  = "-tjs",
+                ["haml"] = "-thaml",
+                ["rb"]   = "-trb",
+                ["erb"]   = "-terb",
+                ["html"]  = "-thtml",
+                ["css"] = "-tcss",
+                ["php"] = "-tphp"
+            }
+            return { args_for_ext[vim.bo.filetype] }
+        end
+    }
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -94,3 +114,5 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+require("telescope").load_extension "file_browser"

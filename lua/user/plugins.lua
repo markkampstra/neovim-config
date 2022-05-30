@@ -109,6 +109,10 @@ return packer.startup(function(use)
   use 'chriskempson/base16-vim'
   use 'tpope/vim-eunuch'
   use 'sainnhe/everforest'
+  use 'tpope/vim-dispatch'
+  use 'voldikss/vim-floaterm'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'anuvyklack/pretty-fold.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
